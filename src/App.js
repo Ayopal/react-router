@@ -7,24 +7,30 @@ import {
 	Route,
 	Navigate,
 } from "react-router-dom";
-import { Navbar, User } from "./components";
-import { Home, Backend, Cloud, Error, Frontend, Stack } from "./pages";
+import { Navbar } from "./components";
+import { Users, Home, Backend, Cloud, Error, Frontend, Stack } from "./pages";
 
 function App() {
 	return (
+			<div className='wrapper'>
+
 		<Router>
-			<div className='App'>
 				<Navbar />
+			<div className='main'>
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/stack' element={<Stack />}>
 						<Route path='frontend' element={<Frontend/>} />
 						<Route path='backend' element={< Backend />} />
+						<Route path='cloud' element={< Cloud />} />
 					</ Route>	
-					<Route path='/user' element={<User />} />
+					<Route path='/users' element={<Users />} />
+					<Route path='/error' element={<Error />} />
+					<Route path="*" element={<Navigate to ="/error" />} />
 				</Routes>
-			</div>
+	</div>
 		</Router>
+	</div>
 	);
 }
 

@@ -5,19 +5,16 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
-		<nav className='header'>
+		<nav className='nav'>
 			<div className='logo'>
 				<Link to='/'>ROUTER</Link>
 			</div>
 			<ul>
 				<li>
-					<Link to='/'>Home</Link>
-				</li>
-				<li>
 					<Link to='/stack'>Stack</Link>
 				</li>
 				<li>
-					<Link to='/user'>Users</Link>
+					<Link to='/users'>Users</Link>
 				</li>
 			</ul>
 		</nav>
